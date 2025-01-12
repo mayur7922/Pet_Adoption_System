@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption System</title>
+</head>
+<body>
+    <h1>Pet Adoption System</h1>
+<hr>
+    <h1>Pet List</h1>
+    <table border="1">
+        <tr>
+            <th>Pet ID</th>
+            <th>Pet Type</th>
+            <th>Pet Breed</th>
+            <th>Pet Age</th>
+            <th>Is Adopted</th>
+        </tr>
+        {% for pet in pets %}
+        <tr>
+            <td>{{ pet.petID }}</td>
+            <td>{{ pet.petType }}</td>
+            <td>{{ pet.petBreed }}</td>
+            <td>{{ pet.petAge }}</td>
+            <td>{{ 'Yes' if pet.isAdopted else 'No' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+<hr>
+
+    <form action="/admin/pets" method="POST">
+        <div>
+            <h2>Enter pet's details to add a Pet</h2>
+            <label for="type">Enter type : </label>
+            <input type="text" name="type" placeholder="Enter the type of the pet">
+            <br><br>
+            <label for="breed">Enter breed : </label>
+            <input type="text" name="breed" placeholder="Enter the breed of the pet">
+            <br><br>
+            <label for="age">Enter age : </label>
+            <input type="number" name="age" placeholder="Enter the age of the pet">
+            <br><br>
+            <!-- <label for="isAdopted">Is adopted? : </label>
+            <input type="checkbox" id="isAdopted" name="isAdopted" /> -->
+            <label for="isAdopted">Is the pet adopted?</label><br>
+            <label>
+                <input type="radio" name="isAdopted" value="True"> Yes
+            </label>
+            <label>
+                <input type="radio" name="isAdopted" value="False"> No
+            </label>
+            <br><br>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+
+    <!-- <form action="admin/pets" method="PUT"></form> -->
+<hr>
+
+<form action="/admin/pets" method="PUT">
+        <div>
+            <h2>Enter pet's details to update a Pet</h2>
+            <label for="id">Enter ID of the pet : </label>
+            <input type="number" name="id" placeholder="Enter the ID of the pet">
+            <br><br>
+            <label for="type">Enter type : </label>
+            <input type="text" name="type" placeholder="Enter the type of the pet">
+            <br><br>
+            <label for="breed">Enter breed : </label>
+            <input type="text" name="breed" placeholder="Enter the breed of the pet">
+            <br><br>
+            <label for="age">Enter age : </label>
+            <input type="number" name="age" placeholder="Enter the age of the pet">
+            <br><br>
+            <!-- <label for="isAdopted">Is adopted? : </label>
+            <input type="checkbox" id="isAdopted" name="isAdopted" /> -->
+            <label for="isAdopted">Is the pet adopted?</label><br>
+            <label>
+                <input type="radio" name="isAdopted" value="True"> Yes
+            </label>
+            <label>
+                <input type="radio" name="isAdopted" value="False"> No
+            </label>
+            <br><br>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+
+<hr>
+
+    <form action="/admin/pets" method="DELETE">
+        <div>
+            <h2>Enter pet's details to delete a Pet</h2>
+            <label for="id">Enter ID of the pet : </label>
+            <input type="number" name="id" placeholder="Enter the ID of the pet">
+            <br><br>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+
+</body>
+</html>

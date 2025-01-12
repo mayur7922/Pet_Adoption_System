@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption System</title>
+</head>
+<body>
+
+    <form action="/pets" method="POST">
+        <div>
+            <h2>Enter the type of a pet to get results</h2>
+            <label for="type">Enter type : </label>
+            <input type="text" name="type" placeholder="Enter the type of the pet">
+            <br><br>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+
+<hr>
+    <h1>Matching searches</h1>
+    <h1>Pet List</h1>
+    <table border="1">
+        <tr>
+            <th>Pet ID</th>
+            <th>Pet Type</th>
+            <th>Pet Breed</th>
+            <th>Pet Age</th>
+            <th>Is Adopted</th>
+        </tr>
+        {% for pet in pets %}
+        <tr>
+            <td>{{ pet.petID }}</td>
+            <td>{{ pet.petType }}</td>
+            <td>{{ pet.petBreed }}</td>
+            <td>{{ pet.petAge }}</td>
+            <td>{{ 'Yes' if pet.isAdopted else 'No' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+
+<hr>
+        
+</body>
+</html>
