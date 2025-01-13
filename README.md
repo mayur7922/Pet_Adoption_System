@@ -47,8 +47,6 @@ This system provides a platform to adopt and return pets
    - **How to Access**: Navigate to `/pets/return`, enter the petId and press enter
 
 ## Getting Started
-
-## Getting Started
 - Clone the repository: git clone https://github.com/your-username/your-repository.git
 - Create and activate the virtual environment
 - Install dependencies: pip install flask, Flask-SQLAlchemy
